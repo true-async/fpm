@@ -1,0 +1,25 @@
+version: '3.8'
+
+services:
+  trueasync-fpm:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: trueasync-fpm
+    ports:
+      - "8080:80"
+    volumes:
+      # Mount your PHP application here
+      - ./app:/var/www/html
+      # Optional: mount custom PHP config
+      # - ./custom-php.ini:/etc/php.d/custom.ini
+    environment:
+      - PHP_FPM_PM_MAX_CHILDREN=50
+      - PHP_FPM_PM_START_SERVERS=5
+    restart: unless-stopped
+    networks:
+      - trueasync-network
+
+networks:
+  trueasync-network:
+    driver: bridge

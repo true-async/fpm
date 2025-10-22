@@ -1,0 +1,42 @@
+# Git
+.git
+.gitignore
+.gitattributes
+
+# Docker
+Dockerfile
+Dockerfile.fpm
+docker-compose*.yml
+.dockerignore*
+
+# Documentation
+*.md
+README*
+docs/
+
+# Tests (optional - удалите если нужны в контейнере)
+tests/
+test/
+*.phpt
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Temporary files
+*.tmp
+*.log
+*.cache
+
+# Build artifacts
+*.o
+*.lo
+*.la
+.libs/
+modules/
+
+# App directory (will be mounted)
+app/
